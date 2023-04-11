@@ -23,7 +23,7 @@ Writing a test
 
 The cucumber features goes in the `features` library and should have the ".feature" extension.
 
-You can start out by looking at `features/my_first.feature`. You can extend this feature or make your own features using some of the [predefined steps](doc/canned_steps.md) that comes with selenium-cucumber.
+You can start out by looking at `features/hotel.feature`. You can extend this feature or make your own features using some of the [predefined steps](doc/canned_steps.md) that comes with selenium-cucumber.
 
 
 Predefined steps
@@ -58,7 +58,7 @@ import cucumber.api.junit.Cucumber;
 	glue = {"info.seleniumcucumber.stepdefinitions"}
 )
 
-public class RunCukeTest {
+public class hotel {
 }
 ```
 
