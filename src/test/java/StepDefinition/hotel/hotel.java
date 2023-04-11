@@ -54,7 +54,7 @@ public class hotel {
 	@And("click cari hotel button")
 	public void click_cari_hotel_button() throws InterruptedException {
 	
-		hotel.buttonCari();
+		hotel.buttonCari(); 
 		}
 
 	@Then("^user will be directed to hotel list(.*)")
