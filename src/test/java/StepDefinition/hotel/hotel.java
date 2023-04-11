@@ -55,14 +55,6 @@ public class hotel {
 	public void click_cari_hotel_button() throws InterruptedException {
 	
 		hotel.buttonCari();
-		Thread.sleep(1000);
-		if(driver.findElement(By.xpath("\"//button[@class=\\\"formButton yesterdayYes\\\"]\"")) != null) {
-			driver.findElement(By.xpath("\"//button[@class=\\\"formButton yesterdayYes\\\"]\""));
-		} 	
-		
-		else {
-			System.out.println("skip gaada pilihan");
-			}
 		}
 
 	@Then("^user will be directed to hotel list(.*)")
