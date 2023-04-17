@@ -14,8 +14,7 @@ import io.cucumber.java.en.*;
 import pages.PageHotel;
 
 
-public class hotel {
-	WebDriver driver = null;
+public class hotel extends test {
 
 	PageHotel hotel;
 	
