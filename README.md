@@ -38,6 +38,10 @@ Running test
 Go to your project directory from terminal and hit following commands
 * `mvn test (defualt will run on local Chrome browser)`
 
+Check report
+--------------
+go to target/cucumber-report
+
 Using canned tests in your project
 ----------------------------------
 
