@@ -8,13 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PageHotel {
 	
-	 @FindBy (id = "hotelNameKey")
+	 @FindBy (id = "Tujuan")
 	 WebElement frm_Location;
 	 
-	 @FindBy (name = "peopleCount")
+	 @FindBy (xpath = "//label[text()=\"Tanggal Menginap\"]")
+	 WebElement frm_date;
+	 
+	 @FindBy (id = "Kamar & Tamu")
 	 WebElement frm_guest;
 	 
-	 @FindBy (xpath = "//button[@title=\"Lakukan pencarian sekarang juga!\"]")
+	 @FindBy (xpath = "//div[text()=\"Cari Hotel\"]")
 	 WebElement btn_cari;
 	 
 	 @FindBy (css = "button.formButton.lastSearch")
@@ -30,6 +33,11 @@ public class PageHotel {
     
     public void formGuest(String guest) {
     	frm_guest.sendKeys(guest);
+    }
+    
+    public void formDate () {
+    	frm_date.click();
+    	
     }
     
     public void formLocation(String location) throws InterruptedException{

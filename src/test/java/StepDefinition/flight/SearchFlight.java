@@ -6,9 +6,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import pages.PageFlight;
 import pages.PageOrder;
@@ -19,9 +16,9 @@ public class SearchFlight {
 	PageFlight flight;
 	PageOrder order;
 
-	@Before
-	public void browserSetup() {
-		
+	@Given("user at flight section")
+	public void user_at_flight_section() {
+
 		String ProjectPatch = System.getProperty("user.dir");
 		System.setProperty("webdriver.chrome.driver", ProjectPatch+"/src/test/resources/driver/chromedriver.exe");
 		driver = new ChromeDriver();	
@@ -29,16 +26,6 @@ public class SearchFlight {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
-	}
-	@After
-	public void tearDown(){
-		driver.close();
-		driver.quit();
-	}
-	
-	
-	@Given("user at flight section")
-	public void user_at_flight_section() {
 
 		driver.navigate().to("https://www.pegipegi.com/flight/");
 		flight = new PageFlight(driver);
@@ -60,6 +47,8 @@ public class SearchFlight {
 	public void user_will_be_directed_to_ticket_list() {
 	String UbahPencarian = driver.findElement(By.xpath("//input[@value=\"UBAH PENCARIAN\"]")).getAccessibleName();
 	Assert.assertEquals(UbahPencarian, "UBAH PENCARIAN");
+	driver.close();
+	driver.quit();
 	}
 	
 	@When("user click cek pesanan")
@@ -71,5 +60,7 @@ public class SearchFlight {
 	@Then("user will be directed to cek pesanan form")
 	public void user_will_be_directed_to_cek_pesanan_form() {
 		driver.findElement(By.xpath("//h2[text()=\"Cek Pesanan\"]")).isDisplayed();
+		driver.close();
+		driver.quit();	   
 	}
 }

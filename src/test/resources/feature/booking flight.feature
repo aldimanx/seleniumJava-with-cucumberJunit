@@ -4,7 +4,6 @@ Feature: i want to create booking flight
     Given user at flight section
 
   Scenario Outline: cari tiket pesawat
-    Given user at flight section
     When user input <passengers> order pesawat detail
     And click cari tiket button
     Then user will be directed to ticket list
